@@ -17,13 +17,25 @@ describe('Restaurant and Menu Models', () => {
     });
 
     test('can create a Restaurant', async () => {
-        // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        let newRestaurant = await Restaurant.create({
+            name: "Eastern Revive",
+            location: "Warrington",
+            cuisine: "Indian"
+        });
+
+        expect(newRestaurant).toBeInstanceOf(Object)
+        expect(newRestaurant.name).toBe("Eastern Revive")
+        expect(newRestaurant.location).toBe("Warrington")
+        expect(newRestaurant.cuisine).toBe("Indian")
     });
 
     test('can create a Menu', async () => {
-        // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        let newMenu = await Menu.create({
+            title: "Dinner Menu"
+        })
+
+        expect(newMenu).toBeInstanceOf(Object)
+        expect(newMenu.title).toBe("Dinner Menu")
     });
 
     test('can find Restaurants', async () => {
