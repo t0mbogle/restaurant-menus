@@ -54,8 +54,24 @@ describe('Restaurant and Menu Models', () => {
         expect(menus[2].title).toEqual("Dinner")
     });
 
-    xtest('can delete Restaurants', async () => {
-        // TODO - write test
-        expect().toEqual()
+    test('can delete Restaurants', async () => {
+        let restaurants = seedRestaurant;
+        expect(restaurants).toHaveLength(3)
+
+        let newRestaurant = await Restaurant.create({
+            name: "Eastern Revive",
+            location: "Warrington",
+            cuisine: "Indian"
+        });
+
+        restaurants.push(newRestaurant)
+        expect(restaurants).toHaveLength(4);
+
+        await newRestaurant.destroy({
+            where: {
+                name: "Eastern Revive"
+            }
+        })
+        expect(restaurants).toHaveLength(3);
     });
 })
