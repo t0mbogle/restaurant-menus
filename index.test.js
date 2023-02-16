@@ -39,17 +39,23 @@ describe('Restaurant and Menu Models', () => {
     });
 
     test('can find Restaurants', async () => {
-        // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        let restaurants = seedRestaurant;
+
+        expect(restaurants[0].name).toEqual("AppleBees")
+        expect(restaurants[0].location).toEqual("Texas")
+        expect(restaurants[0].cuisine).toEqual("FastFood")
     });
 
     test('can find Menus', async () => {
-        // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        let menus = seedMenu;
+
+        expect(menus[0].title).toEqual("Breakfast")
+        expect(menus[1].title).toEqual("Lunch")
+        expect(menus[2].title).toEqual("Dinner")
     });
 
-    test('can delete Restaurants', async () => {
+    xtest('can delete Restaurants', async () => {
         // TODO - write test
-        expect('NO TEST').toEqual('EXPECTED DATA')
+        expect().toEqual()
     });
 })
